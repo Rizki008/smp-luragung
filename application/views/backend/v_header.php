@@ -1,86 +1,54 @@
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-	<div class="site-wrap">
-
-		<div class="site-mobile-menu site-navbar-target">
-			<div class="site-mobile-menu-header">
-				<div class="site-mobile-menu-close mt-3">
-					<span class="icon-close2 js-menu-toggle"></span>
-				</div>
-			</div>
-			<div class="site-mobile-menu-body"></div>
-		</div>
-
-
-		<div class="py-2 bg-light">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-9 d-none d-lg-block">
-						<!-- <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Have a questions?</a>
-							<a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> 10 20 123 456</a>
-							<a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> info@mydomain.com</a> -->
-					</div>
-					<?php if ($this->session->userdata('email') == "") { ?>
-						<div class="col-lg-3 text-right">
-							<a href="<?= base_url('siswa/login') ?>" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
-							<a href="<?= base_url('siswa/register') ?>" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
-						</div>
-					<?php } else { ?>
-						<div class="col-lg-3 text-right">
-							<a href="#" class="small mr-3"><span class="icon-unlock-alt"></span> <?= $this->session->userdata('nama_lengkap') ?></a>
-							<a href="<?= base_url('siswa/logout') ?>" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Logout</a>
-						</div>
-					<?php } ?>
-				</div>
+<body>
+	<div class="container-fluid position-relative d-flex p-0">
+		<!-- Spinner Start -->
+		<div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+				<span class="sr-only">Loading...</span>
 			</div>
 		</div>
-		<header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+		<!-- Spinner End -->
 
-			<div class="container">
-				<div class="d-flex align-items-center">
-					<div class="site-logo">
-						<a href="index.html" class="d-block">
-							<img src="<?= base_url() ?>frontend/images/logo.jpg" alt="Image" class="img-fluid">
-						</a>
+
+		<!-- Sidebar Start -->
+		<div class="sidebar pe-4 pb-3">
+			<nav class="navbar bg-secondary navbar-dark">
+				<a href="index.html" class="navbar-brand mx-4 mb-3">
+					<h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
+				</a>
+				<div class="d-flex align-items-center ms-4 mb-4">
+					<div class="position-relative">
+						<img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+						<div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
 					</div>
-					<div class="mr-auto">
-						<nav class="site-navigation position-relative text-right" role="navigation">
-							<ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-								<li class="active">
-									<a href="index.html" class="nav-link text-left">Home</a>
-								</li>
-								<li class="has-children">
-									<a href="about.html" class="nav-link text-left">About Us</a>
-									<ul class="dropdown">
-										<li><a href="teachers.html">Our Teachers</a></li>
-										<li><a href="about.html">Our School</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="admissions.html" class="nav-link text-left">Admissions</a>
-								</li>
-								<li>
-									<a href="courses.html" class="nav-link text-left">Courses</a>
-								</li>
-								<li>
-									<a href="<?= base_url('pendaftaran/daftar') ?>" class="nav-link text-left">Pendaftaran Calon Siswa</a>
-								</li>
-							</ul>
-							</ul>
-						</nav>
-
+					<div class="ms-3">
+						<h6 class="mb-0">Jhon Doe</h6>
+						<span>Admin</span>
 					</div>
-					<div class="ml-auto">
-						<div class="social-wrap">
-							<a href="#"><span class="icon-facebook"></span></a>
-							<a href="#"><span class="icon-twitter"></span></a>
-							<a href="#"><span class="icon-linkedin"></span></a>
-
-							<a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
+				</div>
+				<div class="navbar-nav w-100">
+					<a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+						<div class="dropdown-menu bg-transparent border-0">
+							<a href="button.html" class="dropdown-item">Buttons</a>
+							<a href="typography.html" class="dropdown-item">Typography</a>
+							<a href="element.html" class="dropdown-item">Other Elements</a>
 						</div>
 					</div>
-
+					<a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+					<a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
+					<a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+					<a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+						<div class="dropdown-menu bg-transparent border-0">
+							<a href="signin.html" class="dropdown-item">Sign In</a>
+							<a href="signup.html" class="dropdown-item">Sign Up</a>
+							<a href="404.html" class="dropdown-item">404 Error</a>
+							<a href="blank.html" class="dropdown-item">Blank Page</a>
+						</div>
+					</div>
 				</div>
-			</div>
-
-		</header>
+			</nav>
+		</div>
+		<!-- Sidebar End -->

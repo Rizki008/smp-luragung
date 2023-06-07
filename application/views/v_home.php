@@ -1,5 +1,5 @@
 <div class="hero-slide owl-carousel site-blocks-cover">
-	<div class="intro-section" style="background-image: url('<?= base_url('frontend') ?>/images/hero_1.jpg');">
+	<div class="intro-section" style="background-image: url('<?= base_url('frontend') ?>/images/slide.jpeg');">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
@@ -9,7 +9,7 @@
 		</div>
 	</div>
 
-	<div class="intro-section" style="background-image: url('<?= base_url('frontend/') ?>images/hero_1.jpg');">
+	<div class="intro-section" style="background-image: url('<?= base_url('frontend/') ?>images/slide2.jpeg');">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-12 mx-auto text-center" data-aos="fade-up">

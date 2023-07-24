@@ -46,12 +46,21 @@
 								<li class="active">
 									<a href="<?= base_url() ?>" class="nav-link text-left">Home</a>
 								</li>
-								<li>
-									<a href="<?= base_url('pendaftaran') ?>" class="nav-link text-left">Data Pendaftaran</a>
-								</li>
-								<li>
-									<a href="<?= base_url('pendaftaran/daftar') ?>" class="nav-link text-left">Pendaftaran Calon Siswa</a>
-								</li>
+								<?php if ($this->session->userdata('status') === '2') { ?>
+									<li>
+										<a href="<?= base_url('pendaftaran/daftar') ?>" class="nav-link text-left">Pendaftaran Calon Siswa</a>
+									</li>
+									<li>
+										<a href="<?= base_url('pendaftaran') ?>" class="nav-link text-left">Upload Persyaratan Pendaftaran</a>
+									</li>
+								<?php } elseif ($this->session->userdata('status') === '1') { ?>
+									<li>
+										<a href="<?= base_url('pendaftaran/status') ?>" class="nav-link text-left">Status Pendaftaran</a>
+									</li>
+									<li>
+										<a href="<?= base_url('chatting') ?>" class="nav-link text-left">Chatting</a>
+									</li>
+								<?php } ?>
 							</ul>
 							</ul>
 						</nav>

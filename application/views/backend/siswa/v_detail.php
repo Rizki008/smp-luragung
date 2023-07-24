@@ -47,7 +47,7 @@
 							<tr>
 								<td>Nama Lengkap</td>
 								<!-- <td>: <?= $value->nama_lengkap ?></td> -->
-								<td>: <input type="text" name="nama" value="<?= $value->nama_lengkap ?>" class="form-control" readonly></td>
+								<td> <input type="text" name="nama" value="<?= $value->nama_lengkap ?>" class="form-control" readonly></td>
 							</tr>
 							<tr>
 								<td>Nis</td>
@@ -55,7 +55,7 @@
 							</tr>
 							<tr>
 								<td>Tempat, Tanggal Lahir</td>
-								<td>: <?= $value->ttl ?></td>
+								<td>: <?= $value->tgl_lahir ?></td>
 							</tr>
 							<br>
 							<tr>
@@ -78,9 +78,8 @@
 							</tr>
 							<tr>
 								<td>Email Orang Tua</td>
-								<td>:
+								<td>
 									<input type="text" name="email_orangtua" class="form-control" value="<?= $value->email_orangtua ?>">
-
 								</td>
 							</tr>
 							<tr>
@@ -94,7 +93,7 @@
 							</tr>
 							<tr>
 								<td>Status</td>
-								<td>:
+								<td>
 									<?php if ($value->status == 0) { ?>
 										<a href="<?= base_url('penerimaan/lulus/' . $value->id_siswa) ?>" class="btn btn-success"><i class="fa fa-check"></i>Lulus</a>
 										<a href="<?= base_url('penerimaan/tidaklulus/' . $value->id_siswa) ?>" class="btn btn-danger"><i class="fa fa-check"></i>Tidak Lulus</a>

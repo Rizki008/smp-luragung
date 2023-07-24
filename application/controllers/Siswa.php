@@ -16,9 +16,6 @@ class Siswa extends CI_Controller
 		$this->form_validation->set_rules('nama_lengkap', 'Nama siswa', 'required', array(
 			'required' => '%s Mohon untuk diisi!!!'
 		));
-		$this->form_validation->set_rules('username_siswa', 'Username_siswa', 'required', array(
-			'required' => '%s Mohon untuk diisi!!!'
-		));
 		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[calon_siswa.email]', array(
 			'required' => '%s Mohon untuk diisi!!!',
 			'is_unique' => '%s Email Sudah Terdaptar'
@@ -37,30 +34,23 @@ class Siswa extends CI_Controller
 			'required' => '%s Mohon Untuk Diisi !!!',
 			'matches' => '%s Tidak Sama !!!'
 		));
-		$this->form_validation->set_rules('alamat', 'Alamat', 'required', array('required' => '%s Mohon untuk diisi!!!'));
-		$this->form_validation->set_rules('nis', 'nis', 'required', array('required' => '%s Mohon untuk diisi!!!'));
-		$this->form_validation->set_rules('ttl', 'Tempat Tanggal Lahir', 'required', array('required' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'required', array('required' => '%s Mohon untuk diisi!!!'));
-		$this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required', array('required' => '%s Mohon untuk diisi!!!'));
+		$this->form_validation->set_rules('status', 'Status', 'required', array('required' => '%s Mohon untuk diisi!!!'));
 
 		if ($this->form_validation->run() ==  FALSE) {
 			$data = array(
-				'title' => 'Register Siswa',
+				'title' => 'Register',
 				'isi'  => 'frontend/siswa/v_register'
 			);
 			$this->load->view('frontend/v_wrapper', $data, FALSE);
 		} else {
 			$data = array(
 				'nama_lengkap' => $this->input->post('nama_lengkap'),
-				'username_siswa' => $this->input->post('username_siswa'),
 				'email' => $this->input->post('email'),
 				'password_siswa' => $this->input->post('password_siswa'),
 				'no_hp_siswa' => $this->input->post('no_hp_siswa'),
-				'alamat' => $this->input->post('alamat'),
-				'nis' => $this->input->post('nis'),
-				'ttl' => $this->input->post('ttl'),
 				'jk' => $this->input->post('jk'),
-				'asal_sekolah' => $this->input->post('asal_sekolah'),
+				'status' => $this->input->post('status'),
 			);
 			$this->m_auth->register($data);
 			$this->session->set_flashdata('pesan', 'Register Berhasi, Silahkan Untuk Login');
@@ -79,7 +69,7 @@ class Siswa extends CI_Controller
 			$this->siswa_login->login($email, $password_siswa);
 		}
 		$data = array(
-			'title' => 'Login siswa',
+			'title' => 'Login',
 			'isi'  => 'frontend/siswa/v_login'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);

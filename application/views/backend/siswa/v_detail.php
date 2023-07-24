@@ -43,64 +43,90 @@
 			<div class="col-lg-6 ml-auto align-self-center">
 				<table class="table table-striped table-bordered zero-configuration">
 					<tbody>
+						<form method="post" action="<?= base_url('kirimemail/send/' . $value->id_siswa) ?>">
+							<tr>
+								<td>Nama Lengkap</td>
+								<!-- <td>: <?= $value->nama_lengkap ?></td> -->
+								<td>: <input type="text" name="nama" value="<?= $value->nama_lengkap ?>" class="form-control" readonly></td>
+							</tr>
+							<tr>
+								<td>Nis</td>
+								<td>: <?= $value->nis ?></td>
+							</tr>
+							<tr>
+								<td>Tempat, Tanggal Lahir</td>
+								<td>: <?= $value->ttl ?></td>
+							</tr>
+							<br>
+							<tr>
+								<td>Jenis Kelamin</td>
+								<td>: <?php if ($value->jk == 1) { ?>
+										Laki-Laki
+									<?php } elseif ($value->jk == 2) { ?>
+										Perempuan
+									<?php } ?>
+								</td>
+							</tr>
+							<tr>
+								<td>No Hp</td>
+								<td>: <?= $value->no_hp_siswa ?></td>
+							</tr>
 
-						<tr>
-							<td>Nama Lengkap</td>
-							<td>: <?= $value->nama_lengkap ?></td>
-						</tr>
-						<tr>
-							<td>Nis</td>
-							<td>: <?= $value->nis ?></td>
-						</tr>
-						<tr>
-							<td>Tempat, Tanggal Lahir</td>
-							<td>: <?= $value->ttl ?></td>
-						</tr>
-						<br>
-						<tr>
-							<td>Jenis Kelamin</td>
-							<td>: <?php if ($value->jk == 1) { ?>
-									<p>Laki-Laki</p>
-								<?php } elseif ($value->jk == 2) { ?>
-									<p>Perempuan</p>
-								<?php } ?>
-							</td>
-						</tr>
-						<tr>
-							<td>No Hp</td>
-							<td>: <?= $value->no_hp_siswa ?></td>
-						</tr>
+							<tr>
+								<td>Email Calon Siswa</td>
+								<td>: <?= $value->email ?></td>
+							</tr>
+							<tr>
+								<td>Email Orang Tua</td>
+								<td>:
+									<input type="text" name="email_orangtua" class="form-control" value="<?= $value->email_orangtua ?>">
 
-						<tr>
-							<td>Email</td>
-							<td>: <?= $value->email ?></td>
-						</tr>
-						<tr>
-							<td>Alamat </td>
-							<td>: <?= $value->alamat ?></td>
-						</tr>
+								</td>
+							</tr>
+							<tr>
+								<td>Alamat </td>
+								<td>: <?= $value->alamat ?></td>
+							</tr>
 
-						<tr>
-							<td>Asal Sekolah</td>
-							<td>: <?= $value->asal_sekolah ?></td>
-						</tr>
-						<tr>
-							<td>Action</td>
-							<td>:
-								<?php if ($value->status == 0) { ?>
-									<a href="<?= base_url('penerimaan/lulus/' . $value->id_siswa) ?>" class="btn btn-success"><i class="fa fa-check"></i>Lulus</a>
-									<a href="<?= base_url('penerimaan/tidaklulus/' . $value->id_siswa) ?>" class="btn btn-danger"><i class="fa fa-check"></i>Tidak Lulus</a>
-								<?php } elseif ($value->status == 1) { ?>
-									<a href="<?= base_url('KirimEmail') ?>" class="btn btn-success"><i class="fa fa-envelope-o"></i>Send Email</a>
+							<tr>
+								<td>Asal Sekolah</td>
+								<td>: <?= $value->asal_sekolah ?></td>
+							</tr>
+							<tr>
+								<td>Status</td>
+								<td>:
+									<?php if ($value->status == 0) { ?>
+										<a href="<?= base_url('penerimaan/lulus/' . $value->id_siswa) ?>" class="btn btn-success"><i class="fa fa-check"></i>Lulus</a>
+										<a href="<?= base_url('penerimaan/tidaklulus/' . $value->id_siswa) ?>" class="btn btn-danger"><i class="fa fa-check"></i>Tidak Lulus</a>
+									<?php } elseif ($value->status == 1) { ?>
+										<!-- <span class="badge badge-success">Lulus</span> -->
+										<input type="text" name="status" value="Lulus" class="form-control" readonly>
+										<!-- <a href="<?= base_url('KirimEmail') ?>" class="btn btn-success"><i class="fa fa-envelope-o"></i>Send Email</a> -->
+									<?php } elseif ($value->status == 2) { ?>
+										<!-- <span class="badge badge-danger">Tidak Lulus</span> -->
+										<input type="text" name="status" value="Tidak Lulus" class="form-control" readonly>
+										<!-- <a href="<?= base_url('KirimEmail') ?>" class="btn btn-danger"><i class="fa fa-envelope-o"></i>Send Email</a> -->
+									<?php } ?>
+								</td>
+							</tr>
+							<tr>
+								<?php if ($value->status == 1) { ?>
+									<td>Kirim Email Lulus</td>
+									<td>
+										<input type="email" name="email" value="<?= $value->email ?>" class="form-control">
+										<br>
+										<button type="submit" class="btn btn-success"></i>Send Email</button>
+									</td>
 								<?php } elseif ($value->status == 2) { ?>
-									<a href="<?= base_url('KirimEmail') ?>" class="btn btn-danger"><i class="fa fa-envelope-o"></i>Send Email</a>
+									<td>Kirim Email Tidak Lulus</td>
+									<td>
+										<input type="email" name="email" value="<?= $value->email ?>" class="form-control">
+										<br>
+										<button type="submit" class="btn btn-success"></i>Send Email</button>
+									</td>
 								<?php } ?>
-							</td>
-						</tr>
-						<!-- <tr>
-							<td>Kirim Email Lulus</td>
-							<td>: <a href="<?= base_url('KirimEmail') ?>" class="btn btn-success"><i class="fa fa-envelope-o"></i>Send Email</a></td>
-						</tr> -->
+							</tr>
+						</form>
 					</tbody>
 				</table>
 			</div>

@@ -24,6 +24,29 @@
 
 		<div class="row justify-content-center">
 			<div class="col-md-5">
+				<?php
+				echo validation_errors('<div class="alert alert-warning alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="icon fa fa-exclamation-triangle"></i> Coba Lagi</h5>', '</div>');
+
+				if ($this->session->flashdata('error')) {
+					echo '<div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fa fa-ban"></i> Gagal</h5>';
+					echo $this->session->flashdata('error');
+					echo '
+    </div>';
+				}
+
+				if ($this->session->flashdata('pesan')) {
+					echo '<div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fa fa-check"></i> Sukses</h5>';
+					echo $this->session->flashdata('pesan');
+					echo '</div>';
+				}
+
+				?>
 				<form method="post" action="<?= base_url('siswa/login') ?>" id="CustomerLoginForm" accept-charset="UTF-8" class="contact-form">
 					<div class="row">
 						<div class="col-md-12 form-group">

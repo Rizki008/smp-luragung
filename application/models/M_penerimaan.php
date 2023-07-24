@@ -14,7 +14,7 @@ class M_penerimaan extends CI_Model
 		$this->db->from('calon_siswa');
 		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
 		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
-		$this->db->where('status=0');
+		$this->db->where('pendaftaran.status=0');
 		$this->db->group_by('calon_siswa.id_siswa');
 		$this->db->order_by('calon_siswa.id_siswa', 'desc');
 		return $this->db->get()->result();
@@ -25,7 +25,7 @@ class M_penerimaan extends CI_Model
 		$this->db->from('calon_siswa');
 		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
 		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
-		$this->db->where('status=1');
+		$this->db->where('pendaftaran.status=1');
 		$this->db->group_by('calon_siswa.id_siswa');
 		$this->db->order_by('calon_siswa.id_siswa', 'desc');
 		return $this->db->get()->result();
@@ -36,7 +36,7 @@ class M_penerimaan extends CI_Model
 		$this->db->from('calon_siswa');
 		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
 		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
-		$this->db->where('status=2');
+		$this->db->where('pendaftaran.status=2');
 		$this->db->group_by('calon_siswa.id_siswa');
 		$this->db->order_by('calon_siswa.id_siswa', 'desc');
 		return $this->db->get()->result();

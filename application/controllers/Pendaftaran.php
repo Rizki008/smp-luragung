@@ -30,8 +30,11 @@ class Pendaftaran extends CI_Controller
 		$this->form_validation->set_rules('jml_sdra', 'Jumlah Sodara', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('anak_ke', 'Anak Ke', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('status', 'Status', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
-		$this->form_validation->set_rules('jarak_rmh', 'Jarak Rumah', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
+		$this->form_validation->set_rules('alamat', 'Alamat Rumah', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('agama', 'Agama', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
+		$this->form_validation->set_rules('nis', 'nis', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
+		$this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
+		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('email_orangtua', 'Email', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 
 		if ($this->form_validation->run() == FALSE) {
@@ -48,9 +51,12 @@ class Pendaftaran extends CI_Controller
 				'nama_ibu' => $this->input->post('nama_ibu'),
 				'jml_sdra' => $this->input->post('jml_sdra'),
 				'anak_ke' => $this->input->post('anak_ke'),
-				'jarak_rmh' => $this->input->post('jarak_rmh'),
-				'status' => $this->input->post('status'),
+				'alamat' => $this->input->post('alamat'),
+				'status' => '0',
 				'agama' => $this->input->post('agama'),
+				'asal_sekolah' => $this->input->post('asal_sekolah'),
+				'nis' => $this->input->post('nis'),
+				'tgl_lahir' => $this->input->post('tgl_lahir'),
 				'email_orangtua' => $this->input->post('email_orangtua'),
 				'tgl_daftar' => date('Y-m-d'),
 			);
@@ -126,5 +132,16 @@ class Pendaftaran extends CI_Controller
 		$this->m_foto->delete($data);
 		$this->session->set_flashdata('pesan', 'Gambar Berhasil Dihapus');
 		redirect('foto/add/' . $id_pendaftaran);
+	}
+
+	public function status()
+	{
+		$this->siswa_login->proteksi_halaman();
+		$data = array(
+			'title' => "Data Status Penerimaan",
+			'status' => $this->m_daftar->all_data(),
+			'isi' => 'frontend/pendaftaran/v_datastatus'
+		);
+		$this->load->view('frontend/v_wrapper', $data, FALSE);
 	}
 }

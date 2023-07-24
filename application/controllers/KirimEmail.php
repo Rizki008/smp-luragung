@@ -16,6 +16,7 @@ class KirimEmail extends CI_Controller
 		require APPPATH . 'libraries/phpmailer/src/SMTP.php';
 
 		$this->load->model('m_chatting');
+		$this->load->model('m_penerimaan');
 	}
 
 	public function index()
@@ -28,8 +29,9 @@ class KirimEmail extends CI_Controller
 	}
 
 
-	public function send()
+	public function send($id_siswa)
 	{
+		$this->m_penerimaan->detail_calon_siswa($id_siswa);
 		// PHPMailer object
 		$response = false;
 		$mail = new PHPMailer();
@@ -51,6 +53,7 @@ class KirimEmail extends CI_Controller
 
 		// Add a recipient
 		$mail->addAddress($this->input->post('email')); //email tujuan pengiriman email
+		$mail->addAddress($this->input->post('email_orangtua')); //email tujuan pengiriman email
 
 		// Set email format to HTML
 		$mail->isHTML(true);
@@ -68,11 +71,6 @@ class KirimEmail extends CI_Controller
 				<td>:</td>
 				<td>" . $this->input->post('status') . "</td>
 			</tr>
-			<tr>
-				<td>Keterangan</td>
-				<td>:</td>
-				<td>" . $this->input->post('keterangan') . "</td>
-			</tr>
 		</table>
    		<p>Terimakasih <b>" . $this->input->post('nama') . "</b> telah mendaftar sebagai calon siswa baru di SMP 2 Luragung.</p>"; // isi email
 		$mail->Body = $mailContent;
@@ -83,7 +81,8 @@ class KirimEmail extends CI_Controller
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 		} else {
 			echo 'Pesan Terkirim';
-			echo "<a href='http://localhost/smp-luragung/penerimaan' class='btn btn-success'>Kembali</a>";
+			redirect('penerimaan/diterima');
+			// echo "<a href='http://localhost/smp-luragung/penerimaan' class='btn btn-success'>Kembali</a>";
 		}
 	}
 }

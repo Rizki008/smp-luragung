@@ -11,7 +11,7 @@ class Chatting extends CI_Controller
 	}
 	public function index()
 	{
-
+		$this->siswa_login->proteksi_halaman();
 		$this->form_validation->set_rules('message', 'Pesan', 'required');
 
 		if ($this->form_validation->run() == FALSE) {

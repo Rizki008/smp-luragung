@@ -31,6 +31,7 @@ class siswa_login
 			$asal_sekolah = $cek->asal_sekolah;
 			$username_siswa = $cek->username_siswa;
 			$password_siswa = $cek->password_siswa;
+			$status = $cek->status;
 
 			$this->ci->session->set_userdata('id_siswa', $id_siswa);
 			$this->ci->session->set_userdata('nama_lengkap', $nama_lengkap);
@@ -43,6 +44,7 @@ class siswa_login
 			$this->ci->session->set_userdata('asal_sekolah', $asal_sekolah);
 			$this->ci->session->set_userdata('username_siswa', $username_siswa);
 			$this->ci->session->set_userdata('password_siswa', $password_siswa);
+			$this->ci->session->set_userdata('status', $status);
 			redirect('home');
 		} else {
 			$this->ci->session->set_flashdata('error', 'Email atau Password Error');
@@ -71,6 +73,7 @@ class siswa_login
 		$this->ci->session->unset_userdata('asal_sekolah');
 		$this->ci->session->unset_userdata('username_siswa');
 		$this->ci->session->unset_userdata('password_siswa');
+		$this->ci->session->unset_userdata('status');
 		$this->ci->session->set_flashdata('pesan', 'Berhasil Logout!!!');
 		redirect('siswa/login');
 	}

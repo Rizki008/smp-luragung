@@ -52,8 +52,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6 form-group">
-				<label for="eaddress">Status</label>
-				<input type="text" id="eaddress" name="status" class="form-control form-control-lg">
+				<label for="tel">Tanggal Lahir</label>
+				<input type="date" id="tel" name="tgl_lahir" class="form-control form-control-lg">
 			</div>
 			<div class="col-md-6 form-group">
 				<label for="tel">Agama</label>
@@ -62,12 +62,22 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6 form-group">
+				<label for="eaddress">Nis</label>
+				<input type="text" id="eaddress" name="nis" class="form-control form-control-lg">
+			</div>
+			<div class="col-md-6 form-group">
+				<label for="message">Asal Sekolah</label>
+				<input type="text" id="tel" name="asal_sekolah" class="form-control form-control-lg">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 form-group">
 				<label for="message">Email Orang Tua</label>
 				<input type="email" id="tel" name="email_orangtua" class="form-control form-control-lg">
 			</div>
 			<div class="col-md-6 form-group">
-				<label for="message">Jarak Rumah ke sekolah</label>
-				<input type="text" id="tel" name="jarak_rmh" class="form-control form-control-lg">
+				<label for="message">Alamat Lengkap</label>
+				<input type="text" id="tel" name="alamat" class="form-control form-control-lg">
 			</div>
 		</div>
 

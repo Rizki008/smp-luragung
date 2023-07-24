@@ -14,6 +14,8 @@ class KirimEmail extends CI_Controller
 		require APPPATH . 'libraries/phpmailer/src/Exception.php';
 		require APPPATH . 'libraries/phpmailer/src/PHPMailer.php';
 		require APPPATH . 'libraries/phpmailer/src/SMTP.php';
+
+		$this->load->model('m_chatting');
 	}
 
 	public function index()

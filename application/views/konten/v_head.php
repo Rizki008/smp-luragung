@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
 	<title><?= $title ?></title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<meta content="" name="keywords">
-	<meta content="" name="description">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Favicon -->
-	<link href="<?= base_url() ?>backend/img/favicon.ico" rel="icon">
 
-	<!-- Google Web Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/fonts/icomoon/style.css">
 
-	<!-- Icon Font Stylesheet -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/jquery-ui.css">
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/owl.theme.default.min.css">
 
-	<!-- Libraries Stylesheet -->
-	<link href="<?= base_url() ?>backend/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-	<link href="<?= base_url() ?>backend/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/jquery.fancybox.min.css">
 
-	<!-- Customized Bootstrap Stylesheet -->
-	<link href="<?= base_url() ?>backend/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/bootstrap-datepicker.css">
 
-	<!-- Template Stylesheet -->
-	<link href="<?= base_url() ?>backend/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/aos.css">
+	<link href="<?= base_url() ?>frontend/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/style.css">
+
+
+
 </head>

@@ -1,60 +1,92 @@
-<body>
-	<div class="container-fluid position-relative d-flex p-0">
-		<!-- Spinner Start -->
-		<div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-				<span class="sr-only">Loading...</span>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+	<div class="site-wrap">
+
+		<div class="site-mobile-menu site-navbar-target">
+			<div class="site-mobile-menu-header">
+				<div class="site-mobile-menu-close mt-3">
+					<span class="icon-close2 js-menu-toggle"></span>
+				</div>
+			</div>
+			<div class="site-mobile-menu-body"></div>
+		</div>
+
+
+		<div class="py-2 bg-light">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-9 d-none d-lg-block">
+					</div>
+					<?php if ($this->session->userdata('username') == "") { ?>
+						<div class="col-lg-3 text-right">
+							<a href="<?= base_url('admin/login') ?>" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
+						</div>
+					<?php } else { ?>
+						<div class="col-lg-3 text-right">
+							<a href="#" class="small mr-3"><span class="icon-unlock-alt"></span> <?= $this->session->userdata('nama_user') ?></a>
+							<a href="<?= base_url('admin/logout') ?>" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Logout</a>
+						</div>
+					<?php } ?>
+				</div>
 			</div>
 		</div>
-		<!-- Spinner End -->
+		<header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
+			<div class="container">
+				<div class="d-flex align-items-center">
+					<div class="site-logo">
+						<a href="index.html" class="d-block">
+							<img src="<?= base_url() ?>frontend/images/logos.png" alt="Image" class="img-fluid">
+						</a>
+					</div>
+					<div class="mr-auto">
+						<nav class="site-navigation position-relative text-right" role="navigation">
+							<ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+								<li class="active">
+									<a href="<?= base_url('admin') ?>" class="nav-link text-left">Home</a>
+								</li>
+								<li class="has-children">
+									<a href="#" class="nav-link text-left">Data Calon Siswa</a>
+									<ul class="dropdown">
+										<li><a href="<?= base_url('penerimaan') ?>">Calon Siswa Baru</a></li>
+										<li><a href="<?= base_url('penerimaan/diterima') ?>">Calon Siswa Diterima</a></li>
+										<li><a href="<?= base_url('penerimaan/ditolak') ?>">Calon Siswa Tidak Diterima</a></li>
+									</ul>
+								</li>
+								<li class="has-children">
+									<?php
+									$jml_chatting = $this->m_chatting->jml_chatting();
+									$daftar_chat = $this->m_chatting->daftar_chat();
+									?>
+									<a href="#" class="nav-link text-left"><span class="icon-envelope-o">Massages [<?= $jml_chatting ?>]</span></a>
+									<ul class="dropdown">
+										<?php foreach ($daftar_chat as $key => $value) { ?>
+											<li><a href="<?= base_url('admin/view_chatting/' . $value->id_siswa) ?>"><?= $value->nama_lengkap ?> | <?= $value->time ?></a></li>
+										<?php } ?>
+									</ul>
+								</li>
+								<li>
+									<a href="<?= base_url('user') ?>" class="nav-link text-left">Data User</a>
+								</li>
+							</ul>
+							</ul>
+						</nav>
 
-		<!-- Sidebar Start -->
-		<div class="sidebar pe-4 pb-3">
-			<nav class="navbar bg-secondary navbar-dark">
-				<a href="index.html" class="navbar-brand mx-4 mb-3">
-					<h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>SMP 2 <br> Luragung</h3>
-				</a>
-				<div class="d-flex align-items-center ms-4 mb-4">
-					<div class="position-relative">
-						<img class="rounded-circle" src="<?= base_url() ?>backend/img/user.jpg" alt="" style="width: 40px; height: 40px;">
-						<div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
 					</div>
-					<div class="ms-3">
-						<h6 class="mb-0"><?= $this->session->userdata('nama_user'); ?></h6>
-						<span>Admin</span>
-					</div>
-				</div>
-				<div class="navbar-nav w-100">
-					<a href="<?= base_url('admin') ?>" class="nav-item nav-link <?php if ($this->uri->segment(1) == 'admin' and $this->uri->segment(2) == "") {
-																					echo "active";
-																				} ?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Data Calon Siswa</a>
-						<div class="dropdown-menu bg-transparent border-0">
-							<a href="<?= base_url('penerimaan') ?>" class="dropdown-item <?php if (
-																								$this->uri->segment(1) == 'penerimaan'
-																							) {
-																								echo "active";
-																							} ?>">Calon Siswa Baru</a>
-							<a href="<?= base_url('penerimaan/diterima') ?>" class="dropdown-item <?php if (
-																										$this->uri->segment(1) == 'penerimaan/diterima'
-																									) {
-																										echo "active";
-																									} ?>">Siswa Diterima</a>
-							<a href="<?= base_url('penerimaan/ditolak') ?>" class="dropdown-item <?php if (
-																										$this->uri->segment(1) == 'penerimaan/ditolak'
-																									) {
-																										echo "active";
-																									} ?>">Siswa Tidak Diterima</a>
+					<!-- <div class="ml-auto">
+						<div class="social-wrap">
+							<?php
+							$jml_chatting = $this->m_chatting->jml_chatting();
+							$daftar_chat = $this->m_chatting->daftar_chat();
+							?>
+							<?php foreach ($daftar_chat as $key => $value) { ?>
+								<a href="<?= base_url('admin/view_chatting/' . $value->id_siswa) ?>"><span class="icon-envelope-o">[<?= $jml_chatting ?>]</span></a>
+							<?php } ?>
+							<a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
 						</div>
-					</div>
-					<a href="<?= base_url('user') ?>" class="nav-item nav-link <?php if (
-																					$this->uri->segment(1) == 'user'
-																				) {
-																					echo "active";
-																				} ?>"><i class="fa fa-th me-2"></i>User</a>
+					</div> -->
+
 				</div>
-			</nav>
-		</div>
-		<!-- Sidebar End -->
+			</div>
+
+		</header>

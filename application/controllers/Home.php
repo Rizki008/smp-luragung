@@ -13,7 +13,7 @@ class Home extends CI_Controller
 	public function index()
 	{
 		$data = array(
-			'Title' => 'SMP Luragung',
+			'title' => 'SMP Luragung',
 			'isi' => 'v_home'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);

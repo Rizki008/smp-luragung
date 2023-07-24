@@ -1,10 +1,28 @@
-<!-- Table Start -->
-<div class="container-fluid pt-4 px-4">
-	<div class="row g-4">
-		<div class="col-sm-12 col-xl-6">
-			<div class="bg-secondary rounded h-100 p-4">
-				<h6 class="mb-4">Detail Calon Siswa</h6>
-				<table class="table table-borderless">
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('<?= base_url('frontend/') ?>images/bg_1.jpg')">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-lg-7">
+				<h2 class="mb-0">Persyaratan Pendaftaran</h2>
+				<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="custom-breadcrumns border-bottom">
+	<div class="container">
+		<a href="<?= base_url() ?>">Home</a>
+		<span class="mx-3 icon-keyboard_arrow_right"></span>
+		<span class="current">Persyaratan</span>
+	</div>
+</div>
+
+<div class="site-section">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-lg-6 mb-lg-0 mb-4">
+				<table class="table table-striped table-bordered zero-configuration">
 					<thead>
 						<tr>
 							<th scope="col">Gambar</th>
@@ -22,11 +40,8 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
-		<div class="col-sm-12 col-xl-6">
-			<div class="bg-secondary rounded h-100 p-4">
-				<h6 class="mb-4">Detail Kontak</h6>
-				<table class="table table-borderless">
+			<div class="col-lg-6 ml-auto align-self-center">
+				<table class="table table-striped table-bordered zero-configuration">
 					<tbody>
 
 						<tr>
@@ -90,33 +105,49 @@
 				</table>
 			</div>
 		</div>
-		<div class="col-sm-12 col-xl-12">
-			<div class="bg-secondary rounded h-100 p-4">
-				<h6 class="mb-4">Detail Pendaftaran</h6>
-				<table class="table table-borderless">
-					<thead>
-						<tr>
-							<th scope="col">Tanggal Daftar</th>
-							<th scope="col">Nama Ayah</th>
-							<th scope="col">Nama Ibu</th>
-							<th scope="col">Jumlah Sodara</th>
-							<th scope="col">Anak Ke</th>
-							<th scope="col">Agama</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row"><?= $value->tgl_daftar ?></th>
-							<td><?= $value->nama_ayah ?></td>
-							<td><?= $value->nama_ibu ?></td>
-							<td><?= $value->jml_sdra ?></td>
-							<td><?= $value->anak_ke ?></td>
-							<td><?= $value->agama ?></td>
-						</tr>
-					</tbody>
-				</table>
+
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="table-responsive">
+							<?php
+							if ($this->session->flashdata('pesan')) {
+								echo '<div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="icon fas fa-check"></i>';
+								echo $this->session->flashdata('pesan');
+								echo '</h5></div>';
+							}
+							?>
+							<table class="table table-striped table-bordered zero-configuration">
+								<thead class="text-center">
+									<tr>
+										<th scope="col">Tanggal Daftar</th>
+										<th scope="col">Nama Ayah</th>
+										<th scope="col">Nama Ibu</th>
+										<th scope="col">Jumlah Sodara</th>
+										<th scope="col">Anak Ke</th>
+										<th scope="col">Agama</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row"><?= $value->tgl_daftar ?></th>
+										<td><?= $value->nama_ayah ?></td>
+										<td><?= $value->nama_ibu ?></td>
+										<td><?= $value->jml_sdra ?></td>
+										<td><?= $value->anak_ke ?></td>
+										<td><?= $value->agama ?></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- /.card-body -->
+					</div>
+					<!-- /.card -->
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- Table End -->

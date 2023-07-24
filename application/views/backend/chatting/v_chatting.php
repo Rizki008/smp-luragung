@@ -1,54 +1,57 @@
-<div class="container-fluid pt-4 px-4">
-	<div class="row g-4">
-		<div class="col-sm-12 col-xl-12">
-			<div class="bg-secondary rounded h-100 p-4">
-				<h6 class="mb-4">Chatting</h6>
-				<?php
-				foreach ($daftar_chat as $key => $value) {
-
-					if ($value->siswa_send != null) {
-				?>
-						<div class="toast-container mb-3">
-							<div class="bs-toast toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-								<div class="toast-header">
-									<i class="bx bx-mail-send me-2"></i>
-									<div class="me-auto fw-semibold"><?= $value->nama_lengkap ?></div>
-									<small><?= $value->time ?></small>
-								</div>
-								<div class="toast-body">
-									<?= $value->siswa_send ?>
-								</div>
-							</div>
-						</div>
-
-					<?php
-					} else if ($value->admin_send != null) {
-					?>
-
-						<div class="bs-toast toast fade show bg-white mb-3" role="alert" aria-live="assertive" aria-atomic="true">
-							<div class="toast-header">
-								<i class="bx bx-mail-send me-2"></i>
-								<div class="me-auto fw-semibold">Admin</div>
-								<small><?= $value->time ?></small>
-							</div>
-							<div class="toast-body">
-								<?= $value->admin_send ?>
-							</div>
-						</div>
-					<?php
-					}
-					?>
-				<?php
-				}
-				?>
-				<h4>Balasan Chatting</h4>
-				<form action="<?= base_url('admin/balas/' . $id_siswa) ?>" method="POST">
-					<textarea class="form-control" name="pesan" placeholder="Tuliskan pesan anda..."></textarea>
-					<button type="submit" class="btn btn-warning mt-3">Send</button>
-				</form>
-
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('images/bg_1.jpg')">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-lg-7">
+				<h2 class="mb-0"><?= $title ?></h2>
+				<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p> -->
 			</div>
 		</div>
 	</div>
 </div>
-<!-- / Content -->
+
+
+<div class="custom-breadcrumns border-bottom">
+	<div class="container">
+		<a href="<?= base_url() ?>">Home</a>
+		<span class="mx-3 icon-keyboard_arrow_right"></span>
+		<span class="current"><?= $title ?></span>
+	</div>
+</div>
+
+<div class="site-section">
+	<div class="container">
+		<form action="<?= base_url('admin/balas/' . $id_siswa) ?>" method="post">
+			<div class="row mb-5">
+				<div class="col-lg-6 mb-lg-0 mb-4">
+					<label for="message">Message</label>
+					<textarea class="form-control" name="pesan" id="message" cols="30" rows="10" placeholder="Tuliskan pesan anda..."></textarea>
+				</div>
+				<div class="col-lg-5 ml-auto align-self-center">
+					<h2 class="section-title-underline mb-5">
+						<span>Chatting</span>
+					</h2>
+					<?php
+					foreach ($daftar_chat as $key => $value) {
+						if ($value->siswa_send != null) {
+					?>
+							<p><?= $value->nama_lengkap ?> : <br> <?= $value->time ?> : <?= $value->siswa_send ?></p>
+						<?php
+						} else if ($value->admin_send != null) {
+						?>
+							<p>Admin : <br> <?= $value->time ?> : <?= $value->admin_send ?></p>
+						<?php
+						}
+						?>
+					<?php
+					}
+					?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<input type="submit" value="Send Message" class="btn btn-primary btn-lg px-5">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

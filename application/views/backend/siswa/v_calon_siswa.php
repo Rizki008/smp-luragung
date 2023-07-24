@@ -54,7 +54,7 @@
 											<th scope="row"><?= $no++ ?></th>
 											<td><?= $value->nama_lengkap ?></td>
 											<td><?= $value->nis ?></td>
-											<td><?= $value->ttl ?></td>
+											<td><?= $value->tgl_lahir ?></td>
 											<td><?php if ($value->jk == 1) { ?>
 													<p>Laki-Laki</p>
 												<?php } elseif ($value->jk == 2) { ?>

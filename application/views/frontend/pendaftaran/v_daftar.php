@@ -61,7 +61,11 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 form-group">
+			<div class="col-md-6 form-group">
+				<label for="message">Email Orang Tua</label>
+				<input type="email" id="tel" name="email_orangtua" class="form-control form-control-lg">
+			</div>
+			<div class="col-md-6 form-group">
 				<label for="message">Jarak Rumah ke sekolah</label>
 				<input type="text" id="tel" name="jarak_rmh" class="form-control form-control-lg">
 			</div>

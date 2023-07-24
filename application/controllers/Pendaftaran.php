@@ -32,6 +32,7 @@ class Pendaftaran extends CI_Controller
 		$this->form_validation->set_rules('status', 'Status', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('jarak_rmh', 'Jarak Rumah', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('agama', 'Agama', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
+		$this->form_validation->set_rules('email_orangtua', 'Email', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
@@ -50,6 +51,7 @@ class Pendaftaran extends CI_Controller
 				'jarak_rmh' => $this->input->post('jarak_rmh'),
 				'status' => $this->input->post('status'),
 				'agama' => $this->input->post('agama'),
+				'email_orangtua' => $this->input->post('email_orangtua'),
 				'tgl_daftar' => date('Y-m-d'),
 			);
 			$this->m_daftar->add($data);

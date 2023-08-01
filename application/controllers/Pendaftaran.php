@@ -29,7 +29,7 @@ class Pendaftaran extends CI_Controller
 		$this->form_validation->set_rules('nama_ibu', 'Nama Ibu', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('jml_sdra', 'Jumlah Sodara', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('anak_ke', 'Anak Ke', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
-		$this->form_validation->set_rules('status', 'Status', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
+		// $this->form_validation->set_rules('status', 'Status', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('alamat', 'Alamat Rumah', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('agama', 'Agama', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('nis', 'nis', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));

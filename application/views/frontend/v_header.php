@@ -47,8 +47,13 @@
 									<a href="<?= base_url() ?>" class="nav-link text-left">Home</a>
 								</li>
 								<?php if ($this->session->userdata('status') === '2') { ?>
-									<li>
-										<a href="<?= base_url('pendaftaran/daftar') ?>" class="nav-link text-left">Pendaftaran Calon Siswa</a>
+									<li class="has-children">
+										<a href="#" class="nav-link text-left">Pendaftaran Calon Siswa</a>
+										<ul class="dropdown">
+											<li><a href="<?= base_url('pendaftaran/daftar') ?>">Jalur Umum</a></li>
+											<li><a href="<?= base_url('pendaftaran/prestasi') ?>">Jalur Prestasi</a></li>
+											<li><a href="<?= base_url('pendaftaran/zonasi') ?>">Jalur Zonasi</a></li>
+										</ul>
 									</li>
 									<li>
 										<a href="<?= base_url('pendaftaran') ?>" class="nav-link text-left">Upload Persyaratan Pendaftaran</a>

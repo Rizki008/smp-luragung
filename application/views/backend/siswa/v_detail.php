@@ -51,21 +51,11 @@
 							</tr>
 							<tr>
 								<td>Nis</td>
-								<td>: <?= $value->nis ?></td>
+								<td>: <?= $value->nisn ?></td>
 							</tr>
 							<tr>
 								<td>Tempat, Tanggal Lahir</td>
 								<td>: <?= $value->tgl_lahir ?></td>
-							</tr>
-							<br>
-							<tr>
-								<td>Jenis Kelamin</td>
-								<td>: <?php if ($value->jk == 1) { ?>
-										Laki-Laki
-									<?php } elseif ($value->jk == 2) { ?>
-										Perempuan
-									<?php } ?>
-								</td>
 							</tr>
 							<tr>
 								<td>No Hp</td>
@@ -84,7 +74,7 @@
 							</tr>
 							<tr>
 								<td>Alamat </td>
-								<td>: <?= $value->alamat ?></td>
+								<td>: Rt.<?= $value->rt ?> / Rw.<?= $value->rw ?>, Lingkungan <?= $value->lingkungan ?>, Desa/Kelurahan <?= $value->desa ?>, Kec.<?= $value->kecamatan ?> Kab.<?= $value->kabupaten ?></td>
 							</tr>
 
 							<tr>

@@ -10,6 +10,7 @@ class M_daftar extends CI_Model
 	{
 		$this->db->select('pendaftaran.*,COUNT(persyaratan.id_pendaftaran)as total_gambar');
 		$this->db->from('pendaftaran');
+		$this->db->where('pendaftaran.id_siswa=', $this->session->userdata('id_siswa'));
 		$this->db->join('persyaratan', 'persyaratan.id_pendaftaran = pendaftaran.id_pendaftaran', 'left');
 		$this->db->group_by('pendaftaran.id_pendaftaran');
 		$this->db->order_by('pendaftaran.id_pendaftaran', 'desc');

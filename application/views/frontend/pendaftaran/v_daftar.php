@@ -52,21 +52,21 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6 form-group">
-				<label for="tel">Tanggal Lahir</label>
+				<label for="tel">Tanggal Lahir Calon Siswa</label>
 				<input type="date" id="tel" name="tgl_lahir" class="form-control form-control-lg">
 			</div>
 			<div class="col-md-6 form-group">
-				<label for="tel">Agama</label>
+				<label for="tel">Agama Calon Siswa</label>
 				<input type="text" id="tel" name="agama" class="form-control form-control-lg">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6 form-group">
-				<label for="eaddress">Nis</label>
-				<input type="text" id="eaddress" name="nis" class="form-control form-control-lg">
+				<label for="eaddress">NISN Calon Siswa</label>
+				<input type="text" id="eaddress" name="nisn" class="form-control form-control-lg">
 			</div>
 			<div class="col-md-6 form-group">
-				<label for="message">Asal Sekolah</label>
+				<label for="message">Asal Sekolah Calon Siswa</label>
 				<input type="text" id="tel" name="asal_sekolah" class="form-control form-control-lg">
 			</div>
 		</div>
@@ -75,9 +75,33 @@
 				<label for="message">Email Orang Tua</label>
 				<input type="email" id="tel" name="email_orangtua" class="form-control form-control-lg">
 			</div>
+			<div class="col-md-3 form-group">
+				<label for="message">Rt</label>
+				<input type="text" id="tel" name="rt" class="form-control form-control-lg">
+			</div>
+			<div class="col-md-3 form-group">
+				<label for="message">Rw</label>
+				<input type="text" id="tel" name="rw" class="form-control form-control-lg">
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-6 form-group">
-				<label for="message">Alamat Lengkap</label>
-				<input type="text" id="tel" name="alamat" class="form-control form-control-lg">
+				<label for="message">Ligkungan</label>
+				<input type="text" id="tel" name="lingkungan" class="form-control form-control-lg">
+			</div>
+			<div class="col-md-6 form-group">
+				<label for="message">Desa/Kelurahan</label>
+				<input type="text" id="tel" name="desa" class="form-control form-control-lg">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 form-group">
+				<label for="message">Kecamatan</label>
+				<input type="text" id="tel" name="kecamatan" class="form-control form-control-lg">
+			</div>
+			<div class="col-md-6 form-group">
+				<label for="message">Kabupaten</label>
+				<input type="text" id="tel" name="kabupaten" class="form-control form-control-lg">
 			</div>
 		</div>
 

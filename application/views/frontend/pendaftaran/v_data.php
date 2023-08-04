@@ -23,15 +23,24 @@
 		<div class="row mb-5">
 			<div class="col-lg-6 mb-lg-0 mb-4">
 				<img src="<?= base_url() ?>frontend/images/course_3.jpg" alt="Image" class="img-fluid">
+				<hr>
+				<h4>Untuk Jalur Prestasi Silahkan Upload Persyaratan</h4>
+				<ol class="ul-check primary list-unstyled">
+					<li>Kartu Keluarga </li>
+					<li>Akta Kelahiran</li>
+					<li>Sertifikat Prestasi</li>
+					<li>Ijazah SD</li>
+					<li>Raport SD</li>
+				</ol>
 			</div>
 			<div class="col-lg-5 ml-auto align-self-center">
 				<h2 class="section-title-underline mb-5">
 					<span>Persyaratan Pendaftaran Calon Peserta Baru</span>
 				</h2>
 				<p>Silahkan Upload persyaratan dibawah ini dengan format, JPG,JPEG,PNG atau PDF</p>
-
+				<hr>
+				<h4>Untuk Jalur UMUM silahkan Upload Persysratan</h4>
 				<ol class="ul-check primary list-unstyled">
-					<li>Untuk Persyaratan Nya Sebagai Berikut:</li>
 					<li>Kartu Keluarga </li>
 					<li>Akta Kelahiran</li>
 					<li>Surat Keterangan Lulus (SKL)</li>
@@ -39,6 +48,15 @@
 					<li>Raport SD</li>
 				</ol>
 
+				<h4>Untuk Jalur Zonasi Silahkan Upload Persyaratan</h4>
+				<ol class="ul-check primary list-unstyled">
+					<li>Kartu Keluarga </li>
+					<li>Akta Kelahiran</li>
+					<li>KTP Orang Tua(suami+istri)</li>
+					<li>Kartu KIP</li>
+					<li>Kartu PKH</li>
+					<li>Ijazah SD/MI</li>
+				</ol>
 			</div>
 		</div>
 
@@ -62,8 +80,8 @@
 										<th>No</th>
 										<th>Nama ayah</th>
 										<th>Nama ibu</th>
-										<th>Jumlah Sodara</th>
-										<th>Anak ke</th>
+										<th>Nama Siswa</th>
+										<th>Jalur</th>
 										<th>Status</th>
 										<th>Jumlah Upload Persyaratan</th>
 										<th>Action</th>
@@ -76,9 +94,16 @@
 											<td><?= $no++; ?></td>
 											<td><?= $value->nama_ayah ?></td>
 											<td><?= $value->nama_ibu ?></td>
-											<td><?= $value->jml_sdra ?></td>
-											<td><?= $value->anak_ke ?></td>
-											<td><?= $value->status ?></td>
+											<td><?= $value->nama_siswa ?></td>
+											<td><?= $value->jalur ?></td>
+											<td><?php if ($value->status === '0') { ?>
+													<span class="badge badge-primary">Calon Siswa</span>
+												<?php } elseif ($value->status === '1') { ?>
+													<span class="badge badge-success">Lulus</span>
+												<?php } elseif ($value->status === '2') { ?>
+													<span class="badge badge-danger">Tidak Lulus</span>
+												<?php } ?>
+											</td>
 											<td><span class="badge bg-success">
 													<h5><?= $value->total_gambar ?></h5>
 												</span></td>

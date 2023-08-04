@@ -46,9 +46,16 @@
 									<a href="<?= base_url('admin') ?>" class="nav-link text-left">Home</a>
 								</li>
 								<li class="has-children">
-									<a href="#" class="nav-link text-left">Data Calon Siswa</a>
+									<a href="#" class="nav-link text-left">Data Pendaftaran Calon Siswa</a>
 									<ul class="dropdown">
-										<li><a href="<?= base_url('penerimaan') ?>">Calon Siswa Baru</a></li>
+										<li><a href="<?= base_url('penerimaan') ?>">Jalur Pendaftaran Umum</a></li>
+										<li><a href="<?= base_url('penerimaan/prestasi') ?>">Jalur Pendaftaran Prestasi</a></li>
+										<li><a href="<?= base_url('penerimaan/zonasi') ?>">Jalur Pendaftaran Zonasi</a></li>
+									</ul>
+								</li>
+								<li class="has-children">
+									<a href="#" class="nav-link text-left">Penerimaan Calon Siswa</a>
+									<ul class="dropdown">
 										<li><a href="<?= base_url('penerimaan/diterima') ?>">Calon Siswa Diterima</a></li>
 										<li><a href="<?= base_url('penerimaan/ditolak') ?>">Calon Siswa Tidak Diterima</a></li>
 									</ul>

@@ -53,13 +53,9 @@
 										<tr>
 											<th scope="row"><?= $no++ ?></th>
 											<td><?= $value->nama_lengkap ?></td>
-											<td><?= $value->nis ?></td>
+											<td><?= $value->nisn ?></td>
 											<td><?= $value->tgl_lahir ?></td>
-											<td><?php if ($value->jk == 1) { ?>
-													<p>Laki-Laki</p>
-												<?php } elseif ($value->jk == 2) { ?>
-													<p>Perempuan</p>
-												<?php } ?>
+											<td><?= $value->jenis_kelamin ?>
 											</td>
 											<td><?= $value->email ?></td>
 											<td><?= $value->no_hp_siswa ?></td>

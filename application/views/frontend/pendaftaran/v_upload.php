@@ -46,7 +46,7 @@
 			<div class="row">
 				<div class="col-md-6 form-group">
 					<label for="fname">Nama File</label>
-					<input type="text" id="fname" name="keterangan" multiple class="form-control form-control-lg">
+					<input type="text" id="fname" name="keterangan_syarat" multiple class="form-control form-control-lg">
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="fname">Persyaratan</label>
@@ -73,7 +73,7 @@
 					<div class="form-group">
 						<img src="<?= base_url('assets/syarat/' . $value->gambar) ?>" id="gambar_load" width="250px" height="200px">
 					</div>
-					<p for="">keterangan : <?= $value->keterangan ?></p>
+					<p for="">keterangan : <?= $value->keterangan_syarat ?></p>
 					<button data-toggle="modal" data-target="#delete<?= $value->id_persyaratan ?>" class="btn btn-danger btn-sm btn-block"><i class="fa fa-trash"></i>Hapus Gambar</button>
 				</div>
 			<?php } ?>

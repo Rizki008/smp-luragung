@@ -76,6 +76,44 @@
 </div>
 
 
+<div class="site-section">
+	<div class="container">
+
+
+		<div class="row mb-5 justify-content-center text-center">
+			<div class="col-lg-6 mb-5">
+				<h2 class="section-title-underline mb-3">
+					<span>Konten</span>
+				</h2>
+				<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, id?</p> -->
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<div class="owl-slide-3 owl-carousel">
+					<?php foreach ($konten as $key => $valuse) { ?>
+						<div class="course-1-item">
+							<figure class="thumnail">
+								<div class="category">
+									<h3><?= $valuse->isi_konten ?></h3>
+								</div>
+							</figure>
+							<div class="course-1-content pb-4">
+								<h2>Tanggal Mulai : <?= $valuse->tgl_mulai ?></h2>
+								<h2>Tanggal Berakhir : <?= $valuse->tgl_akhir ?></h2>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+
 
 
 <div class="section-bg style-1" style="background-image: url('<?= base_url() ?>frontend/images/about_1.jpg');">

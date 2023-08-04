@@ -40,8 +40,7 @@
 										<th scope="col">#</th>
 										<th scope="col">Nama Siswa</th>
 										<th scope="col">Nis</th>
-										<th scope="col">Tempat, Tanggal Lahir</th>
-										<th scope="col">Jenis Kelamin</th>
+										<th scope="col">Tanggal Lahir</th>
 										<th scope="col">Email</th>
 										<th scope="col">No Hp</th>
 										<th scope="col">Action</th>
@@ -53,14 +52,8 @@
 										<tr>
 											<th scope="row"><?= $no++ ?></th>
 											<td><?= $value->nama_lengkap ?></td>
-											<td><?= $value->nis ?></td>
+											<td><?= $value->nisn ?></td>
 											<td><?= $value->tgl_lahir ?></td>
-											<td><?php if ($value->jk == 1) { ?>
-													<p>Laki-Laki</p>
-												<?php } elseif ($value->jk == 2) { ?>
-													<p>Perempuan</p>
-												<?php } ?>
-											</td>
 											<td><?= $value->email ?></td>
 											<td><?= $value->no_hp_siswa ?></td>
 											<td>

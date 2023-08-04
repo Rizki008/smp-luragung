@@ -8,12 +8,14 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		//Do your magic here
+		$this->load->model('m_konten');
 	}
 
 	public function index()
 	{
 		$data = array(
 			'title' => 'SMP Luragung',
+			'konten' => $this->m_konten->konten(),
 			'isi' => 'v_home'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);

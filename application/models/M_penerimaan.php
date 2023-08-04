@@ -15,7 +15,34 @@ class M_penerimaan extends CI_Model
 		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
 		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
 		$this->db->where('pendaftaran.status=0');
+		$this->db->where('pendaftaran.jalur', 'umum');
 		$this->db->group_by('calon_siswa.id_siswa');
+		$this->db->order_by('calon_siswa.id_siswa', 'desc');
+		return $this->db->get()->result();
+	}
+	// List all your items
+	public function prestasi()
+	{
+		$this->db->select('*');
+		$this->db->from('calon_siswa');
+		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
+		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
+		$this->db->where('pendaftaran.status=0');
+		$this->db->where('pendaftaran.jalur', 'prestasi');
+		// $this->db->group_by('calon_siswa.id_siswa');
+		$this->db->order_by('calon_siswa.id_siswa', 'desc');
+		return $this->db->get()->result();
+	}
+	// List all your items
+	public function zonasi()
+	{
+		$this->db->select('*');
+		$this->db->from('calon_siswa');
+		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
+		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
+		$this->db->where('pendaftaran.status=0');
+		$this->db->where('pendaftaran.jalur', 'zonasi');
+		// $this->db->group_by('calon_siswa.id_siswa');
 		$this->db->order_by('calon_siswa.id_siswa', 'desc');
 		return $this->db->get()->result();
 	}
@@ -26,7 +53,6 @@ class M_penerimaan extends CI_Model
 		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
 		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
 		$this->db->where('pendaftaran.status=1');
-		$this->db->group_by('calon_siswa.id_siswa');
 		$this->db->order_by('calon_siswa.id_siswa', 'desc');
 		return $this->db->get()->result();
 	}
@@ -37,7 +63,6 @@ class M_penerimaan extends CI_Model
 		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
 		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
 		$this->db->where('pendaftaran.status=2');
-		$this->db->group_by('calon_siswa.id_siswa');
 		$this->db->order_by('calon_siswa.id_siswa', 'desc');
 		return $this->db->get()->result();
 	}
@@ -49,6 +74,29 @@ class M_penerimaan extends CI_Model
 		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
 		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
 		$this->db->where('pendaftaran.id_siswa', $id_siswa);
+		$this->db->where('pendaftaran.jalur', 'umum');
+		// $this->db->group_by('calon_siswa.id_siswa');
+		return $this->db->get()->result();
+	}
+	public function detail_calon_siswa_prestasi($id_siswa)
+	{
+		$this->db->select('*');
+		$this->db->from('calon_siswa');
+		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
+		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
+		$this->db->where('pendaftaran.id_siswa', $id_siswa);
+		$this->db->where('pendaftaran.jalur', 'prestasi');
+		// $this->db->group_by('calon_siswa.id_siswa');
+		return $this->db->get()->result();
+	}
+	public function detail_calon_siswa_zonasi($id_siswa)
+	{
+		$this->db->select('*');
+		$this->db->from('calon_siswa');
+		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
+		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
+		$this->db->where('pendaftaran.id_siswa', $id_siswa);
+		$this->db->where('pendaftaran.jalur', 'zonasi');
 		// $this->db->group_by('calon_siswa.id_siswa');
 		return $this->db->get()->result();
 	}

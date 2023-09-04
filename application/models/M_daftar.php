@@ -47,7 +47,7 @@ class M_daftar extends CI_Model
 
 	public function all_data()
 	{
-		$this->db->select('pendaftaran.asal_sekolah,pendaftaran.status,pendaftaran.alamat,calon_siswa.nama_lengkap,pendaftaran.nis');
+		$this->db->select('pendaftaran.asal_sekolah,pendaftaran.status,`pendaftaran`.`lingkungan`,`pendaftaran`.`desa`,`pendaftaran`.`kecamatan`,`pendaftaran`.`kabupaten`,`pendaftaran`.`rt`,`pendaftaran`.`rw`,calon_siswa.nama_lengkap,pendaftaran.nisn,pendaftaran.jalur');
 		$this->db->from('pendaftaran');
 		$this->db->join('calon_siswa', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
 		$this->db->order_by('id_pendaftaran', 'desc');

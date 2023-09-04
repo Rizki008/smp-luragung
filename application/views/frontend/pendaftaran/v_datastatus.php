@@ -30,10 +30,11 @@
 								<thead class="text-center">
 									<tr>
 										<th>No</th>
-										<th>NIS</th>
+										<th>NISN</th>
 										<th>Nama Calon Siswa</th>
 										<th>Asal Sekolah</th>
 										<th>Alamat</th>
+										<th>Jalur Pendaftaran</th>
 										<th>Status</th>
 									</tr>
 								</thead>
@@ -42,10 +43,11 @@
 									foreach ($status as $key => $value) { ?>
 										<tr class="text-center">
 											<td><?= $no++; ?></td>
-											<td><?= $value->nis ?></td>
+											<td><?= $value->nisn ?></td>
 											<td><?= $value->nama_lengkap ?></td>
 											<td><?= $value->asal_sekolah ?></td>
-											<td><?= $value->alamat ?></td>
+											<td><?= $value->rt ?>,<?= $value->rw ?>,<?= $value->lingkungan ?>,<?= $value->desa ?>,<?= $value->kecamatan ?>,<?= $value->kabupaten ?></td>
+											<td><?= $value->jalur ?></td>
 											<td><?php if ($value->status === '1') { ?>
 													<span class="badge badge-success">Lulus</span>
 												<?php } elseif ($value->status === '2') { ?>

@@ -54,6 +54,16 @@ class M_daftar extends CI_Model
 		return $this->db->get()->result();
 	}
 
+	public function detail_calon_siswa($id_pendaftaran)
+	{
+		$this->db->select('*');
+		$this->db->from('calon_siswa');
+		$this->db->join('pendaftaran', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
+		$this->db->join('persyaratan', 'pendaftaran.id_pendaftaran = persyaratan.id_pendaftaran', 'left');
+		$this->db->where('pendaftaran.id_pendaftaran', $id_pendaftaran);
+		// $this->db->group_by('calon_siswa.id_siswa');
+		return $this->db->get()->result();
+	}
 
 	// public function getRows($id_persyaratan = '')
 	// {

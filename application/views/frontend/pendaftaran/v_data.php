@@ -109,6 +109,7 @@
 												</span></td>
 											<td>
 												<a href="<?= base_url('pendaftaran/add/' . $value->id_pendaftaran) ?>" class="btn btn-success btn-sm"><i class="fa fa-plus"> Upload Persyaratan</i></a>
+												<a href="<?= base_url('pendaftaran/detail/' . $value->id_pendaftaran) ?>" class="btn btn-success btn-sm"><i class="fa fa-plus"> Deatail Persyaratan</i></a>
 											</td>
 										</tr>
 									<?php } ?>

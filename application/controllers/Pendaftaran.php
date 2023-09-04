@@ -22,6 +22,16 @@ class Pendaftaran extends CI_Controller
 		$this->load->view('frontend/v_wrapper', $data, FALSE);
 	}
 
+	public function detail($id_pendaftaran = null)
+	{
+		$data = array(
+			'title' => "Detail Upload Data Persyaratan",
+			'detail' => $this->m_daftar->detail_calon_siswa($id_pendaftaran),
+			'isi' => 'frontend/pendaftaran/v_detail'
+		);
+		$this->load->view('frontend/v_wrapper', $data, FALSE);
+	}
+
 	public function daftar()
 	{
 		$this->siswa_login->proteksi_halaman();

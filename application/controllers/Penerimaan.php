@@ -142,7 +142,7 @@ class Penerimaan extends CI_Controller
 		);
 		$this->M_penerimaan->update($data);
 		$this->session->set_flashdata('pesan', 'Tidak Lulus');
-		redirect('penerimaan/detail/' . $id_siswa);
+		redirect('penerimaan/detail_prestasi/' . $id_siswa);
 	}
 	public function tidaklulus_zonasi($id_siswa = null)
 	{
@@ -152,7 +152,7 @@ class Penerimaan extends CI_Controller
 		);
 		$this->M_penerimaan->update($data);
 		$this->session->set_flashdata('pesan', 'Tidak Lulus');
-		redirect('penerimaan/detail/' . $id_siswa);
+		redirect('penerimaan/detail_zonasi/' . $id_siswa);
 	}
 }
 

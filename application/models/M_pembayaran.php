@@ -11,6 +11,7 @@ class M_pembayaran extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('pembayaran');
+		$this->db->join('calon_siswa', 'calon_siswa.id_siswa = pembayaran.id_siswa', 'left');
 		$this->db->order_by('id_pembayaran', 'desc');
 		return $this->db->get()->result();
 	}
@@ -40,6 +41,14 @@ class M_pembayaran extends CI_Model
 	{
 		$this->db->where('id_pembayaran', $data['id_pembayaran']);
 		$this->db->delete('pembayaran', $data);
+	}
+
+	public function siswa()
+	{
+		$this->db->select('*');
+		$this->db->from('calon_siswa');
+		$this->db->where('status', 2);
+		return $this->db->get()->result();
 	}
 }
 

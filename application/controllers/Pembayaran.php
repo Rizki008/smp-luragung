@@ -26,7 +26,7 @@ class Pembayaran extends CI_Controller
 
 	public function add()
 	{
-		$this->form_validation->set_rules('nama_pembayar', 'Nama Pembayar', 'required', array(
+		$this->form_validation->set_rules('id_siswa', 'Nama Pembayar', 'required', array(
 			'required' => '%s Mohon Untuk diisi!!!'
 		));
 		$this->form_validation->set_rules('jml_bayar', 'Jumlah Bayar', 'required', array(
@@ -38,12 +38,13 @@ class Pembayaran extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
 				'title' => 'Tambah data Pembayaran',
+				'siswa' => $this->m_pembayaran->siswa(),
 				'isi' => 'kesiswaan/pembayaran/v_add'
 			);
 			$this->load->view('kesiswaan/v_wrapper', $data, FALSE);
 		} else {
 			$data = array(
-				'nama_pembayar' => $this->input->post('nama_pembayar'),
+				'id_siswa' => $this->input->post('id_siswa'),
 				'jml_bayar' => $this->input->post('jml_bayar'),
 			);
 			$this->m_pembayaran->add($data);
@@ -52,6 +53,7 @@ class Pembayaran extends CI_Controller
 		}
 		$data = array(
 			'title' => 'Tambah data Pembayaran',
+			'siswa' => $this->m_pembayaran->siswa(),
 			'isi' => 'kesiswaan/pembayaran/v_add'
 		);
 		$this->load->view('kesiswaan/v_wrapper', $data, FALSE);

@@ -49,7 +49,7 @@
 									foreach ($pembayaran as $key => $value) { ?>
 										<tr>
 											<th scope="row"><?= $no++ ?></th>
-											<td><?= $value->nama_pembayar ?></td>
+											<td><?= $value->nama_lengkap ?></td>
 											<td>Rp. <?= number_format($value->jml_bayar, 0) ?></td>
 											<td><?= $value->time ?></td>
 											<!-- <td>

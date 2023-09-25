@@ -85,8 +85,16 @@
 								<td>Status</td>
 								<td>
 									<?php if ($value->status == 0) { ?>
-										<a href="<?= base_url('penerimaan/lulus/' . $value->id_siswa) ?>" class="btn btn-success"><i class="fa fa-check"></i>Lulus</a>
-										<a href="<?= base_url('penerimaan/tidaklulus/' . $value->id_siswa) ?>" class="btn btn-danger"><i class="fa fa-check"></i>Tidak Lulus</a>
+
+										<button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit<?= $value->id_siswa ?>">
+											Lulus
+										</button>
+										<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapus<?= $value->id_siswa ?>">
+											Tidak Lulus
+										</button>
+
+										<!-- <a href="<?= base_url('penerimaan/lulus/' . $value->id_siswa) ?>" class="btn btn-success"><i class="fa fa-check"></i>Lulus</a>
+										<a href="<?= base_url('penerimaan/tidaklulus/' . $value->id_siswa) ?>" class="btn btn-danger"><i class="fa fa-check"></i>Tidak Lulus</a> -->
 									<?php } elseif ($value->status == 1) { ?>
 										<!-- <span class="badge badge-success">Lulus</span> -->
 										<input type="text" name="status" value="Lulus" class="form-control" readonly>
@@ -104,12 +112,16 @@
 									<td>
 										<input type="email" name="email" value="<?= $value->email ?>" class="form-control">
 										<br>
+										<input type="text" name="alasan_lulus" value="<?= $value->alasan_lulus ?>" class="form-control">
+										<br>
 										<button type="submit" class="btn btn-success"></i>Send Email</button>
 									</td>
 								<?php } elseif ($value->status == 2) { ?>
 									<td>Kirim Email Tidak Lulus</td>
 									<td>
 										<input type="email" name="email" value="<?= $value->email ?>" class="form-control">
+										<br>
+										<input type="text" name="alasan_lulus" value="<?= $value->alasan_lulus ?>" class="form-control">
 										<br>
 										<button type="submit" class="btn btn-success"></i>Send Email</button>
 									</td>
@@ -166,3 +178,52 @@
 		</div>
 	</div>
 </div>
+
+<!-- Lulus -->
+<?php foreach ($detail as $key => $value) { ?>
+	<div class="modal fade" id="edit<?= $value->id_siswa ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Status Kelulusan</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form action="<?= base_url('penerimaan/lulus/' . $value->id_siswa) ?>" method="POST">
+					<div class="modal-body">
+						<input type="text" name="alasan_lulus" class="form-control" placeholder="Alasan Lulus / Tidak Lulus">
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">Simpan</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php } ?>
+<!-- Tidak lulus -->
+<?php foreach ($detail as $key => $value) { ?>
+	<div class="modal fade" id="hapus<?= $value->id_siswa ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Status Kelulusan</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form action="<?= base_url('penerimaan/tidaklulus/' . $value->id_siswa) ?>" method="POST">
+					<div class="modal-body">
+						<input type="text" name="alasan_lulus" class="form-control" placeholder="Alasan Lulus / Tidak Lulus">
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">Simpan</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php } ?>

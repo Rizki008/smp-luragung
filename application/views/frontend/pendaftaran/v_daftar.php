@@ -31,6 +31,12 @@
 		<?php $id_pendaftaran = date('Ymd') . strtoupper(random_string('alnum', 8)); ?>
 		<input name="id_pendaftaran" value="<?= $id_pendaftaran ?>" type="hidden">
 		<div class="row">
+			<div class="col-md-12 form-group">
+				<label for="fname">Nama Lengkap Siswa</label>
+				<input type="text" id="fname" name="nama_siswa" class="form-control form-control-lg">
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-6 form-group">
 				<label for="fname">Nama Ayah</label>
 				<input type="text" id="fname" name="nama_ayah" class="form-control form-control-lg">

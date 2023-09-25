@@ -35,6 +35,7 @@ class Pendaftaran extends CI_Controller
 	public function daftar()
 	{
 		$this->siswa_login->proteksi_halaman();
+		$this->form_validation->set_rules('nama_siswa', 'Nama Siswa', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('nama_ayah', 'Nama Ayah', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('nama_ibu', 'Nama Ibu', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('jml_sdra', 'Jumlah Sodara', 'required', array('pesan' => '%s Mohon untuk diisi!!!'));
@@ -61,6 +62,7 @@ class Pendaftaran extends CI_Controller
 			$data = array(
 				'id_pendaftaran' => $this->input->post('id_pendaftaran'),
 				'id_siswa' => $this->session->userdata('id_siswa'),
+				'nama_siswa' => $this->input->post('nama_siswa'),
 				'nisn' => $this->input->post('nisn'),
 				'nama_ayah' => $this->input->post('nama_ayah'),
 				'nama_ibu' => $this->input->post('nama_ibu'),
@@ -325,6 +327,16 @@ class Pendaftaran extends CI_Controller
 			'title' => "Data Status Penerimaan",
 			'status' => $this->m_daftar->all_data(),
 			'isi' => 'frontend/pendaftaran/v_datastatus'
+		);
+		$this->load->view('frontend/v_wrapper', $data, FALSE);
+	}
+	public function status1()
+	{
+		$this->siswa_login->proteksi_halaman();
+		$data = array(
+			'title' => "Data Status Penerimaan",
+			'status' => $this->m_daftar->data_siswa(),
+			'isi' => 'frontend/pendaftaran/v_datastatus1'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);
 	}

@@ -29,13 +29,13 @@
 		<form action="<?= base_url('pembayaran/add') ?>" method="POST">
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Nama Pembayar</label>
-				<!-- <input type="text" name="nama_pembayar" class="form-control"> -->
-				<select name="id_siswa" id="id_siswa" class="form-control">
+				<input type="text" name="nama_pembyar" class="form-control">
+				<!-- <select name="id_siswa" id="id_siswa" class="form-control">
 					<option>---Nama Pembayar---</option>
 					<?php foreach ($siswa as $key => $value) { ?>
 						<option value="id_siswa"><?= $value->nama_lengkap ?></option>
 					<?php } ?>
-				</select>
+				</select> -->
 			</div>
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Jumlah Bayar</label>

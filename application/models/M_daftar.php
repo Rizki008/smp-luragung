@@ -54,6 +54,16 @@ class M_daftar extends CI_Model
 		return $this->db->get()->result();
 	}
 
+	public function data_siswa()
+	{
+		$this->db->select('pendaftaran.asal_sekolah,pendaftaran.status,`pendaftaran`.`lingkungan`,`pendaftaran`.`desa`,`pendaftaran`.`kecamatan`,`pendaftaran`.`kabupaten`,`pendaftaran`.`rt`,`pendaftaran`.`rw`,calon_siswa.nama_lengkap,pendaftaran.nisn,pendaftaran.jalur');
+		$this->db->from('pendaftaran');
+		$this->db->join('calon_siswa', 'calon_siswa.id_siswa = pendaftaran.id_siswa', 'left');
+		$this->db->where('pendaftaran.id_siswa=', $this->session->userdata('id_siswa'));
+		$this->db->order_by('id_pendaftaran', 'desc');
+		return $this->db->get()->result();
+	}
+
 	public function detail_calon_siswa($id_pendaftaran)
 	{
 		$this->db->select('*');

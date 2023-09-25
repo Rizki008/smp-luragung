@@ -71,6 +71,11 @@ class KirimEmail extends CI_Controller
 				<td>:</td>
 				<td>" . $this->input->post('status') . "</td>
 			</tr>
+			<tr>
+				<td>Alasan Lulus / Tidak Lulus</td>
+				<td>:</td>
+				<td>" . $this->input->post('alasan_lulus') . "</td>
+			</tr>
 		</table>
    		<p>Terimakasih <b>" . $this->input->post('nama') . "</b> telah mendaftar sebagai calon siswa baru di SMP 2 Luragung.</p>"; // isi email
 		$mail->Body = $mailContent;

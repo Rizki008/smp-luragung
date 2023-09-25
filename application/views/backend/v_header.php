@@ -60,6 +60,9 @@
 										<li><a href="<?= base_url('penerimaan/ditolak') ?>">Calon Siswa Tidak Diterima</a></li>
 									</ul>
 								</li>
+								<li>
+									<a href="<?= base_url('laporan') ?>" class="nav-link text-left">Laporan Kelulusan</a>
+								</li>
 								<li class="has-children">
 									<?php
 									$jml_chatting = $this->m_chatting->jml_chatting();

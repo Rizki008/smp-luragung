@@ -98,6 +98,7 @@ class Penerimaan extends CI_Controller
 	{
 		$data = array(
 			'id_siswa' => $id_siswa,
+			'alasan_lulus' => $this->input->post('alasan_lulus'),
 			'status' => 1
 		);
 		$this->M_penerimaan->update($data);
@@ -108,6 +109,7 @@ class Penerimaan extends CI_Controller
 	{
 		$data = array(
 			'id_siswa' => $id_siswa,
+			'alasan_lulus' => $this->input->post('alasan_lulus'),
 			'status' => 1
 		);
 		$this->M_penerimaan->update($data);
@@ -118,6 +120,7 @@ class Penerimaan extends CI_Controller
 	{
 		$data = array(
 			'id_siswa' => $id_siswa,
+			'alasan_lulus' => $this->input->post('alasan_lulus'),
 			'status' => 1
 		);
 		$this->M_penerimaan->update($data);
@@ -128,6 +131,7 @@ class Penerimaan extends CI_Controller
 	{
 		$data = array(
 			'id_siswa' => $id_siswa,
+			'alasan_lulus' => $this->input->post('alasan_lulus'),
 			'status' => 2
 		);
 		$this->M_penerimaan->update($data);
@@ -138,6 +142,7 @@ class Penerimaan extends CI_Controller
 	{
 		$data = array(
 			'id_siswa' => $id_siswa,
+			'alasan_lulus' => $this->input->post('alasan_lulus'),
 			'status' => 2
 		);
 		$this->M_penerimaan->update($data);
@@ -148,6 +153,7 @@ class Penerimaan extends CI_Controller
 	{
 		$data = array(
 			'id_siswa' => $id_siswa,
+			'alasan_lulus' => $this->input->post('alasan_lulus'),
 			'status' => 2
 		);
 		$this->M_penerimaan->update($data);

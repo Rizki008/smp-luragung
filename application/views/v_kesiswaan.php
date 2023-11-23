@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
-					<h1>SMP 2 Luragung</h1>
+					<h1>SMP NEGERI 2 Luragung</h1>
 				</div>
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 		<div class="row mb-5 justify-content-center text-center">
 			<div class="col-lg-4 mb-5">
 				<h2 class="section-title-underline mb-5">
-					<span>Tentang SMP 2 Luragung</span>
+					<span>Tentang SMP NEGERI 2 Luragung</span>
 				</h2>
 			</div>
 		</div>
@@ -83,7 +83,7 @@
 		<div class="row">
 			<div class="col-lg-4">
 				<h2 class="section-title-underline style-2">
-					<span>Tentang SMP 2 Luragung</span>
+					<span>Tentang SMP NEGERI 2 Luragung</span>
 				</h2>
 			</div>
 			<div class="col-lg-8">

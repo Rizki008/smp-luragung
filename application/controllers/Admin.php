@@ -48,7 +48,7 @@ class Admin extends CI_Controller
 	public function view_chatting($id_siswa)
 	{
 		$data = array(
-			'title' => 'SMP Luragung',
+			'title' => 'SMP Negeri 2 Luragung',
 			'id_siswa' => $id_siswa,
 			'daftar_chat' => $this->m_chatting->view_chatting($id_siswa),
 			'isi' => 'backend/chatting/v_chatting'

@@ -41,15 +41,15 @@ class KirimEmail extends CI_Controller
 		$mail->Host     = 'smtp.gmail.com';
 		$mail->SMTPAuth = true;
 		$mail->Username = 'kr044401@gmail.com'; // user email anda
-		$mail->Password = 'gvkywvrkatayokwc'; // diisi dengan App Password yang sudah di generate
+		$mail->Password = 'nwndyllwwmglssoq'; // diisi dengan App Password yang sudah di generate
 		$mail->SMTPSecure = 'ssl';
 		$mail->Port     = 465;
 
-		$mail->setFrom('kr044401@gmail.com', 'SMP 2 Luragung'); // user email anda
+		$mail->setFrom('kr044401@gmail.com', 'SMP NEGERI 2 Luragung'); // user email anda
 		$mail->addReplyTo('kr044401@gmail.com', ''); //user email anda
 
 		// Email subject
-		$mail->Subject = 'Informasi Penerimaan Siswa | SMP 2 Luragung.com'; //subject email
+		$mail->Subject = 'Informasi Penerimaan Siswa | SMP Negeri 2 Luragung.com'; //subject email
 
 		// Add a recipient
 		$mail->addAddress($this->input->post('email')); //email tujuan pengiriman email
@@ -77,7 +77,7 @@ class KirimEmail extends CI_Controller
 				<td>" . $this->input->post('alasan_lulus') . "</td>
 			</tr>
 		</table>
-   		<p>Terimakasih <b>" . $this->input->post('nama') . "</b> telah mendaftar sebagai calon siswa baru di SMP 2 Luragung.</p>"; // isi email
+   		<p>Terimakasih <b>" . $this->input->post('nama') . "</b> telah mendaftar sebagai calon siswa baru di SMP NEGERI 2 Luragung.</p>"; // isi email
 		$mail->Body = $mailContent;
 
 		// Send email

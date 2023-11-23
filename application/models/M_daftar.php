@@ -26,6 +26,14 @@ class M_daftar extends CI_Model
 		return $this->db->get()->row();
 	}
 
+	public function detail_gambarh($id_persyaratan)
+	{
+		$this->db->select('*');
+		$this->db->from('persyaratan');
+		$this->db->where('id_persyaratan', $id_persyaratan);
+		return $this->db->get()->row();
+	}
+
 	public function detail_gambar($id_pendaftaran)
 	{
 		$this->db->select('*');
@@ -43,6 +51,11 @@ class M_daftar extends CI_Model
 	public function add_syarat($data)
 	{
 		$this->db->insert('persyaratan', $data);
+	}
+	public function delete($data)
+	{
+		$this->db->where('id_persyaratan', $data['id_persyaratan']);
+		$this->db->delete('persyaratan', $data);
 	}
 
 	public function all_data()

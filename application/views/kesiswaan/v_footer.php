@@ -8,7 +8,7 @@
 					<p>
 						Copyright &copy;<script>
 							document.write(new Date().getFullYear());
-						</script> SMP 2 Luragung <i class="icon-heart" aria-hidden="true"></i> <a href="<?= base_url() ?>" target="_blank">Kuningan Jawabarat</a>
+						</script> SMP NEGERI 2 Luragung <i class="icon-heart" aria-hidden="true"></i> <a href="<?= base_url() ?>" target="_blank">Kuningan Jawabarat</a>
 					</p>
 				</div>
 			</div>

@@ -17,7 +17,7 @@ class Cetak extends CI_Controller
 		$pdf->SetFont('Arial', 'B', 16);
 		$pdf->Cell(0, 7, 'HASIL PENDAFTARAN SISWA', 0, 1, 'C');
 		$pdf->SetFont('Arial', 'I', 12);
-		$pdf->Cell(0, 7, 'SMP 2 LURAGUNG, KUNINGAN', 0, 1, 'C');
+		$pdf->Cell(0, 7, 'SMP NEGERI 2 LURAGUNG, KUNINGAN', 0, 1, 'C');
 		$pdf->Cell(10, 7, '', 0, 1);
 		$pdf->SetFont('Arial', 'B', 10);
 		$pdf->Cell(10, 6, 'No', 1, 0, 'C');

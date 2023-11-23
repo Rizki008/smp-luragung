@@ -33,7 +33,7 @@
 						<?php foreach ($detail as $key => $value) { ?>
 							<tr>
 								<th scope="row"><img src="<?= base_url('assets/syarat/' . $value->gambar)  ?>" width="150px" alt=""></th>
-								<td><?= $value->keterangan ?></td>
+								<td><?= $value->keterangan_syarat ?></td>
 							</tr>
 
 						<?php } ?>

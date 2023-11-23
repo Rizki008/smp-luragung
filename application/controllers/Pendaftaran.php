@@ -304,20 +304,20 @@ class Pendaftaran extends CI_Controller
 	}
 
 
-	public function delete($id_pendaftaran, $id_gambar)
+	public function delete($id_pendaftaran, $id_persyaratan)
 	{
 		//hapus gambar
-		$gambar = $this->m_foto->detail($id_gambar);
+		$gambar = $this->m_daftar->detail_gambarh($id_persyaratan);
 		if ($gambar->gambar !== "") {
-			unlink('./assets/foto/' . $gambar->gambar);
+			unlink('./assets/syarat/' . $gambar->gambar);
 		}
 
 		$data = array(
-			'id_gambar' => $id_gambar
+			'id_persyaratan' => $id_persyaratan
 		);
-		$this->m_foto->delete($data);
+		$this->m_daftar->delete($data);
 		$this->session->set_flashdata('pesan', 'Gambar Berhasil Dihapus');
-		redirect('foto/add/' . $id_pendaftaran);
+		redirect('pendaftaran/add/' . $id_pendaftaran);
 	}
 
 	public function status()

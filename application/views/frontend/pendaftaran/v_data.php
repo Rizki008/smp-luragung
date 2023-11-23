@@ -39,7 +39,7 @@
 				</h2>
 				<p>Silahkan Upload persyaratan dibawah ini dengan format, JPG,JPEG,PNG atau PDF</p>
 				<hr>
-				<h4>Untuk Jalur UMUM silahkan Upload Persysratan</h4>
+				<h4>Untuk Jalur UMUM silahkan Upload Persyaratan</h4>
 				<ol class="ul-check primary list-unstyled">
 					<li>Kartu Keluarga </li>
 					<li>Akta Kelahiran</li>

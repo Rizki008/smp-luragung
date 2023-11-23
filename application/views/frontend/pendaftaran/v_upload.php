@@ -80,3 +80,33 @@
 		</div>
 	</div>
 </div>
+<!-- /.modal Delete -->
+<?php foreach ($gambar as $key => $value) { ?>
+	<div class="modal fade" id="delete<?= $value->id_persyaratan ?>">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Delete <?= $value->keterangan_syarat ?></h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-center">
+
+					<div class="form-group">
+						<img src="<?= base_url('assets/syarat/' . $value->gambar) ?>" id="gambar_load" width="250px" height="200px">
+					</div>
+
+					<h5>Apakah Anda Yakin Akan Hapus Gambar ini?</h5>
+				</div>
+				<div class="modal-footer justify-content-between">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<a href="<?= base_url('pendaftaran/delete/' . $value->id_pendaftaran . '/' . $value->id_persyaratan) ?> " class="btn btn-primary">Delete</a>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+<?php } ?>
